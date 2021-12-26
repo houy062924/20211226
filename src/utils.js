@@ -39,11 +39,11 @@ export const questions = [
             }
         
             if (i === 2) { // to prevent rounding errors
-              numbers.push(1)
-              continue
+              numbers.push(1);
+              continue;
             }
         
-            numbers.push(Math.round(numbers[i - 1] * goldenRatio))
+            numbers.push(Math.round(numbers[i - 1] * goldenRatio));
           }
         
           if (n < 2) return numbers[n];
@@ -55,7 +55,7 @@ export const questions = [
         content: `
         function fibonacci (n) {
           if (n < 2) return n;
-          else return fibonacci(n - 1) + fibonacci(n - 2)
+          else return fibonacci(n - 1) + fibonacci(n - 2);
         }
         `,
       }
@@ -187,7 +187,7 @@ export const questions = [
         title: 'Method 2: For Loops',
         content: `
         function transformData(data) {
-          const result = []
+          const result = [];
         
           for (let i = 0; i < data.length; i++) {
             const { userId, orderIds } = data[i];
@@ -228,7 +228,7 @@ export const questions = [
       { title: 'Throttling',
         content: `
         const func = async () => {
-          return await new Promise((resolve) => setTimeout(() => resolve('result')))
+          return await new Promise((resolve) => setTimeout(() => resolve('result')));
         }
         
         const throttle = (func, timeout) => {
