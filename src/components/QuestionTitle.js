@@ -4,7 +4,7 @@ const QuestionTitle = ({ id, title, content }) => {
 	
 	return (
 		<div className="question-title-cont">
-			<h1 className="question-title">{`${id} ${title}`}</h1>
+			<h1 className="question-title">{`${id}. ${title}`}</h1>
 			<p className="question-content">{content}</p>
 		</div>
 	);

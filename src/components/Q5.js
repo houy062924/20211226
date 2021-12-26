@@ -40,11 +40,13 @@ const Q5 = () => {
 	return (
 		<div className="Q5">
 			<h2>Throttling Demo</h2>
-			<button onClick={onClickThrottleBtn}>
-				Click me to see throttle
-			</button>
-			<p>{`Function called: ${funcCallTimes} times`}</p>
-			<p>{`Throttled Function called: ${throttleFuncCallTimes} times`}</p>
+			<div className="demo-cont">
+				<button onClick={onClickThrottleBtn}>
+					Click me to see throttle
+				</button>
+				<p>{`Function called: ${funcCallTimes} times`}</p>
+				<p>{`Throttled Function called: ${throttleFuncCallTimes} times`}</p>
+			</div>
 		</div>
 	);
 };

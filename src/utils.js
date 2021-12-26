@@ -23,7 +23,8 @@ export const questions = [
           
           if (n < 2) return numbers[n];
           else return numbers[n - 1] + numbers[n - 2];
-        }`,
+        }
+				`,
       }, {
         title: 'Method 2: Golden Ratio',
         content: `
@@ -47,22 +48,16 @@ export const questions = [
         
           if (n < 2) return numbers[n];
           else return numbers[n - 1] + numbers[n - 2];
-        }`
+        }
+				`
       }, {
         title: 'Method 3: Recursion',
         content: `
         function fibonacci (n) {
           if (n < 2) return n;
           else return fibonacci(n - 1) + fibonacci(n - 2)
-        }`,
-        notes: `
-        Advantages:
-          - fibonacci numbers are naturally recursive
-          - as a result, the function is clean and easy to read & understand
-      
-        Disadvantages:
-          - takes up greater memory and tends to be slower
-          - could potential lead to stack overflows if number is too big`,
+        }
+				`,
       }
     ],
   }, {
@@ -137,7 +132,8 @@ export const questions = [
             
             return count;
           }
-        }`
+        }
+				`
       }
     ]
   }, {
@@ -185,7 +181,8 @@ export const questions = [
               ...orderData[orderId],
             }))
           }]
-        }, [])`,
+        }, [])
+				`,
       }, {
         title: 'Method 2: For Loops',
         content: `
@@ -216,7 +213,8 @@ export const questions = [
           return result;
         }
         
-        const result = transformData(userOrders);`
+        const result = transformData(userOrders);
+				`
       }
     ]
   }, {
@@ -247,7 +245,8 @@ export const questions = [
           }
         }
         
-        const throttleFunc = throttle(func, 1000);`
+        const throttleFunc = throttle(func, 1000);
+				`
       }
     ],
   }, {

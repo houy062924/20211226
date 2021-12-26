@@ -13,10 +13,6 @@ const QuestionContent = ({ id, answers = [] }) => {
 							<pre>
 								<code>{ans.content}</code>
 							</pre>
-							{/* <p>{ans.content}</p> */}
-							{ ans.notes && (
-								<p>{ans.notes}</p>
-							)}
 						</div>
 					))}
 				</div>
@@ -37,7 +33,7 @@ const QuestionContent = ({ id, answers = [] }) => {
 	}
 
 	return (
-		<div className="content-cont">
+		<div className="question-content-cont">
 			{renderContent(id)}
 		</div>
 	);

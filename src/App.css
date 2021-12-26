@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+/* Shared ----- */
+
+:root {
+	--blue: #198fb3;
+	--dark-blue: #0F566B;
+	--yellow: #ffc600;
+	--black: #2F3537;
+	--white: #F5F5F5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+	margin: 0;
+	color: var(--black);
+	background-color: var(--white);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+	padding: 25px 36px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+	margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+h2::before {
+	color: var(--yellow);
+	content: "✱ ";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+	white-space: pre-wrap;
+}
+
+button {
+	background-color: var(--blue);
+	color: var(--white);
+	border: none;
+	padding: 8px 24px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+button:hover {
+	background-color: var(--dark-blue);
+}
+
+button:active {
+	transform: translateY(1px);
+}
+
+
+/* Navigation Bar ----- */
+
+.nav-cont {
+	background-color: var(--blue);
+	color: var(--white);
+}
+
+.nav-cont ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	height: 60px;
+}
+
+.nav-cont li {
+	padding: 16px 20px;
+	font-size: 20px;
+	cursor: pointer;
+	border-bottom: 5px solid transparent;
+	box-sizing: border-box;
+}
+
+.nav-cont .is-active {
+	font-weight: bold;
+	border-bottom: 5px solid var(--yellow);
+}
+
+
+
+/* Question Title ----- */
+
+.question-title-cont {
+	border: 3px solid var(--blue);
+	border-radius: 25px;
+	padding: 16px;
+}
+
+.question-title-cont .title-cont {
+	
+}
+
+/* Question Content ----- */
+
+.question-content-cont {
+	padding: 0 16px;
+}
+
+.question-content-cont .demo-cont {
+	margin: 30px 60px;
+}
+
+/* Form ----- */
+
+.form-cont {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin: 30px 60px;
+}
+
+.form-cont .input-block {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.form-cont input {
+	padding: 4px 8px;
+	outline: none;
+	margin-right: 16px;
+}
+
+.form-cont label {
+	padding: 4px 8px;
+	outline: none;
+	margin-right: 16px;
+}
+
+.form-cont input:active {
+	border: 1px solid var(--dark-blue);
 }

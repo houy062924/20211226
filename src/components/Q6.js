@@ -94,37 +94,43 @@ const Q6 = () => {
 			<div>
 				<h2>useForm Custom Hook Demo</h2>
 				<form className="form-cont">
-					<input 
-						name="account"
-						onChange={handleChange} 
-						value={values.account}
-						placeholder="Account"
-					/>
-					
-					{errors.account && (
-						<div>{errors.account}</div>
-					)}
-
-					<input 
-						name="password"
-						onChange={handleChange} 
-						value={values.password}
-						placeholder="password"
-					/>
-					
-					{errors.password && (
-						<div>{errors.password}</div>
-					)}
-					
-					<label>
+					<div className="input-block">
 						<input 
-							type="checkbox"
-							name="rememberMe"
-							onChange={handleChange}
-							checked={values.rememberMe} 
+							name="account"
+							onChange={handleChange} 
+							value={values.account}
+							placeholder="Account"
 						/>
-						Remember Me
-					</label>
+						
+						{errors.account && (
+							<span>{errors.account}</span>
+						)}
+					</div>
+					
+					<div className="input-block">
+						<input 
+							name="password"
+							onChange={handleChange} 
+							value={values.password}
+							placeholder="Password"
+						/>
+						
+						{errors.password && (
+							<span>{errors.password}</span>
+						)}
+					</div>
+					
+					<div className="input-block">
+						<label>
+							<input 
+								type="checkbox"
+								name="rememberMe"
+								onChange={handleChange}
+								checked={values.rememberMe} 
+							/>
+							Remember Me
+						</label>
+					</div>
 					
 					<button onClick={handleSubmit}>Login</button>
 				</form>
