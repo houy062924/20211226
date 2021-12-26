@@ -27,7 +27,9 @@ const QuestionContent = ({ id, answers = [] }) => {
 		
 		if (id === 'Q6') {
 			return (
-				<Q6 />
+				<Q6 
+					answers={answers}
+				/>
 			)
 		}
 	}

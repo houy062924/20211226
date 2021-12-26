@@ -24,7 +24,7 @@ export const questions = [
           if (n < 2) return numbers[n];
           else return numbers[n - 1] + numbers[n - 2];
         }
-				`,
+        `,
       }, {
         title: 'Method 2: Golden Ratio',
         content: `
@@ -49,7 +49,7 @@ export const questions = [
           if (n < 2) return numbers[n];
           else return numbers[n - 1] + numbers[n - 2];
         }
-				`
+        `
       }, {
         title: 'Method 3: Recursion',
         content: `
@@ -57,7 +57,7 @@ export const questions = [
           if (n < 2) return n;
           else return fibonacci(n - 1) + fibonacci(n - 2)
         }
-				`,
+        `,
       }
     ],
   }, {
@@ -133,7 +133,7 @@ export const questions = [
             return count;
           }
         }
-				`
+        `
       }
     ]
   }, {
@@ -182,7 +182,7 @@ export const questions = [
             }))
           }]
         }, [])
-				`,
+        `,
       }, {
         title: 'Method 2: For Loops',
         content: `
@@ -214,7 +214,7 @@ export const questions = [
         }
         
         const result = transformData(userOrders);
-				`
+        `
       }
     ]
   }, {
@@ -246,7 +246,7 @@ export const questions = [
         }
         
         const throttleFunc = throttle(func, 1000);
-				`
+        `
       }
     ],
   }, {
@@ -256,6 +256,38 @@ export const questions = [
   }, {
     id: 'Q6',
     title: '(加分題) 實作 React Custom hook',
-    content: `使用 Create React App 架設,請依照下列登入畫面範例完成 useForm 實作。\n當有 errors 時 handleSubmit 要被 by pass。`
+    content: `使用 Create React App 架設,請依照下列登入畫面範例完成 useForm 實作。\n當有 errors 時 handleSubmit 要被 by pass。`,
+    answers: [
+      { title: 'useForm Custom Hook',
+        content: `
+        const useForm = (data) => {
+          const [values, setValues] = useState(data.initialValues);
+          const [errors, setErrors] = useState({});
+
+          const handleChange = (e) => {
+            const { name, value, type, checked } = e.target;
+            
+            setValues({
+              ...values,
+              [name]: type === 'checkbox' ? checked : value,
+            })
+          }
+
+          const handleSubmit = (e) => {
+            e.preventDefault();
+            const errors = data.validation(values);
+            setErrors(errors);
+            
+            if (Object.values(errors).length === 0) {
+              data.onSubmit(values);
+              alert("Login Success");
+            }
+          }
+          
+          return { handleChange, handleSubmit, values, errors };
+        }
+        `
+      }
+    ]
   }
 ]

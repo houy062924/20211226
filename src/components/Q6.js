@@ -27,7 +27,7 @@ const useForm = (data) => {
 	return { handleChange, handleSubmit, values, errors };
 }
 
-const Q6 = () => {
+const Q6 = ({ answers }) => {
 
 	const { handleChange, handleSubmit, values, errors } = useForm({
 		initialValues: {
@@ -46,49 +46,18 @@ const Q6 = () => {
 		},
 		onSubmit: (values) => console.table(values),
 	})
-	
-	const renderCodeBlock = () => {
-		return (
-			`
-			const useForm = (data) => {
-				const [values, setValues] = useState(data.initialValues);
-				const [errors, setErrors] = useState({});
-
-				const handleChange = (e) => {
-					const { name, value, type, checked } = e.target;
-					
-					setValues({
-						...values,
-						[name]: type === 'checkbox' ? checked : value,
-					})
-				}
-
-				const handleSubmit = (e) => {
-					e.preventDefault();
-					const errors = data.validation(values);
-					setErrors(errors);
-					
-					if (Object.values(errors).length === 0) {
-						data.onSubmit(values);
-						alert("Login Success");
-					}
-				}
-				
-				return { handleChange, handleSubmit, values, errors };
-			}
-			`
-		)
-	}
 
 	return (
 		<div className="Q6">
 			<div>
-				<h2>useForm Custom Hook</h2>
-				<pre>
-					<code>
-						{renderCodeBlock()}
-					</code>
-				</pre>
+				{ answers.map(ans => (
+					<div className="answer-block" key={ans.title}>
+						<h2>{ans.title}</h2>
+						<pre>
+							<code>{ans.content}</code>
+						</pre>
+					</div>
+				))}
 			</div>
 			
 			<div>
